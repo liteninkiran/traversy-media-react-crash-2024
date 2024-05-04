@@ -11,6 +11,7 @@ import { MainLayout } from './layouts/MainLayout';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { AddJobPage } from './pages/AddJobPage';
 import { Job } from './components/JobListing';
+import { EditJobPage } from './pages/EditJobPage';
 
 const App = () => {
     const addJob = async (newJob: Job): Promise<void> => {
@@ -40,6 +41,7 @@ const App = () => {
                 <Route path='/jobs' element={<JobsPage />} />
                 <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
                 <Route path='/jobs/:id' element={<JobPage deleteJob={deleteJob} />} loader={jobLoader} />
+                <Route path='/jobs/edit/:id' element={<EditJobPage />} loader={jobLoader} />
                 <Route path='*' element={<NotFoundPage />} />
             </Route>
         )
