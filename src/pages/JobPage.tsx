@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { Job } from '../components/JobListing';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 export const JobPage = ({ deleteJob }: Props) => {
     const job: Job = useLoaderData() as Job;
@@ -11,6 +12,7 @@ export const JobPage = ({ deleteJob }: Props) => {
             return;
         }
         deleteJob(id);
+        toast.success('Job deleted successfully');
         navigate('/jobs');
     }
 
