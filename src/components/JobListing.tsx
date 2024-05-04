@@ -69,7 +69,7 @@ export const JobListing = ({ job }: Props) => {
 }
 
 export interface Job {
-    id: string;
+    id?: string;
     title: string;
     type: string;
     description: string;
