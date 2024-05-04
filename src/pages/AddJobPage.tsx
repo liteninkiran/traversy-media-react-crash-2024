@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Job } from '../components/JobListing';
+import { useNavigate } from 'react-router-dom';
 
-export const AddJobPage = () => {
+export const AddJobPage = ({ addJobSubmit }: Props) => {
     const [title, setTitle] = useState('');
     const [type, setType] = useState('Full-Time');
     const [location, setLocation] = useState('');
@@ -11,6 +12,8 @@ export const AddJobPage = () => {
     const [companyDescription, setCompanyDescription] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactPhone, setContactPhone] = useState('');
+
+    const navigate = useNavigate();
 
     const submitForm = (e: React.SyntheticEvent): void => {
         e.preventDefault();
@@ -27,7 +30,8 @@ export const AddJobPage = () => {
                 contactPhone: contactPhone,
             },
         }
-        console.log(newJob);
+        addJobSubmit(newJob);
+        return navigate('/jobs');
     }
 
     return (
@@ -223,4 +227,8 @@ export const AddJobPage = () => {
         </section>
 
     );
+}
+
+interface Props {
+    addJobSubmit: (job: Job) => void;
 }
