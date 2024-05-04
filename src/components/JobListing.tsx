@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaMapMarker } from 'react-icons/fa';
 
 const JobListing = ({ job }: Props) => {
     const [showFullDescription, setShowFullDescription] = useState(false);
@@ -33,6 +34,7 @@ const JobListing = ({ job }: Props) => {
                     {description}
                 </div>
 
+                {/* Toggle Read More/Less */}
                 <button onClick={() => setShowFullDescription((prev) => !prev)} className="text-indigo-500 mb-5 hover:text-indigo-600">
                     { showFullDescription ? 'Less' : 'More' }
                 </button>
@@ -50,7 +52,7 @@ const JobListing = ({ job }: Props) => {
 
                     {/* Location */}
                     <div className="text-orange-700 mb-3">
-                        <i className="fa-solid fa-location-dot text-lg"></i>
+                        <FaMapMarker className='inline text-lg mb-1 mr-1' />
                         {job.location}
                     </div>
 
