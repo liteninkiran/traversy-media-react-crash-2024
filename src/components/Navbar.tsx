@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 
-const Navbar = () => {
+export const Navbar = () => {
     const baseClass = 'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2';
     const linkClass = ({ isActive }: NavLinkProp) => isActive ? 'bg-black ' + baseClass : baseClass;
 
@@ -28,8 +28,6 @@ const Navbar = () => {
         </nav>
     );
 }
-
-export default Navbar;
 
 interface NavLinkProp {
     isActive: boolean;

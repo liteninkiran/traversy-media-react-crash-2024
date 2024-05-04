@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const JobListing = ({ job }: Props) => {
+export const JobListing = ({ job }: Props) => {
     const [showFullDescription, setShowFullDescription] = useState(false);
     let description = job.description;
     if (!showFullDescription) {
@@ -68,9 +68,7 @@ const JobListing = ({ job }: Props) => {
     );
 }
 
-export default JobListing;
-
-interface Job {
+export interface Job {
     id: string;
     title: string;
     type: string;

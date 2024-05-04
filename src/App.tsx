@@ -1,13 +1,13 @@
-import { 
-    Route, 
-    createBrowserRouter, 
-    createRoutesFromElements, 
+import {
+    Route,
+    createBrowserRouter,
+    createRoutesFromElements,
     RouterProvider,
 } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import MainLayout from './layouts/MainLayout';
-import JobsPage from './pages/JobsPage';
-import NotFoundPage from './pages/NotFoundPage';
+import { HomePage } from './pages/HomePage';
+import { MainLayout } from './layouts/MainLayout';
+import { JobsPage } from './pages/JobsPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,9 +20,7 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-    return (
-        <RouterProvider router={router} />
-    );
-}
+    return <RouterProvider router={router} />;
+};
 
 export default App;

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import Card from '../components/Card';
+import { Card } from '../components/Card';
 
-const HomeCards = () => {
+export const HomeCards = () => {
     return (
         <section className="py-4">
             <div className="container-xl lg:container m-auto">
@@ -21,5 +21,3 @@ const HomeCards = () => {
         </section>
     );
 }
-
-export default HomeCards;

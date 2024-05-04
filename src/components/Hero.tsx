@@ -3,7 +3,7 @@ interface Props {
     subtitle?: string;
 }
 
-const Hero = ({title = 'Become A React Dev', subtitle = 'Find the React job that fits your skillset' }: Props) => {
+export const Hero = ({title = 'Become A React Dev', subtitle = 'Find the React job that fits your skillset' }: Props) => {
     return (
         <section className="bg-indigo-700 py-20 mb-4">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
@@ -19,5 +19,3 @@ const Hero = ({title = 'Become A React Dev', subtitle = 'Find the React job that
         </section>
     );
 };
-
-export default Hero;
