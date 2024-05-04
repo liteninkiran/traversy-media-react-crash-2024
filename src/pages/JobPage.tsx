@@ -1,4 +1,4 @@
-// import { useParams, useLoaderData } from 'react-router-dom';
+// import { useParams, useLoaderData, Link } from 'react-router-dom';
 import { Link, useLoaderData } from 'react-router-dom';
 import { Job } from '../components/JobListing';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
