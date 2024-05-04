@@ -21,8 +21,13 @@ const App = () => {
             },
             body: JSON.stringify(newJob),
         });
+        console.log(res);
         return;
     }
+
+    const deleteJob = async (id: string): Promise<void> => {
+        return;
+    };
 
     const router = createBrowserRouter(
         createRoutesFromElements(
@@ -30,7 +35,7 @@ const App = () => {
                 <Route index element={<HomePage />} />
                 <Route path='/jobs' element={<JobsPage />} />
                 <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
-                <Route path='/jobs/:id' element={<JobPage />} loader={jobLoader} />
+                <Route path='/jobs/:id' element={<JobPage deleteJob={deleteJob} />} loader={jobLoader} />
                 <Route path='*' element={<NotFoundPage />} />
             </Route>
         )

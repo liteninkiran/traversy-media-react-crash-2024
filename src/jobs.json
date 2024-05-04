@@ -85,15 +85,15 @@
       }
     },
     {
-      "id": "0750",
-      "title": "My Job",
+      "id": "fd15",
+      "title": "My New Job",
       "type": "Full-Time",
       "location": "London",
-      "description": "...",
+      "description": "Job description goes here",
       "salary": "Under £50K",
       "company": {
         "name": "WestTek",
-        "description": "...",
+        "description": "???",
         "contactEmail": "s@s.com",
         "contactPhone": ""
       }

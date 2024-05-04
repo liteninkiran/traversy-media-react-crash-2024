@@ -1,11 +1,18 @@
-// import { useParams, useLoaderData, Link } from 'react-router-dom';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { Job } from '../components/JobListing';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 
-export const JobPage = () => {
-    // const { id } = useParams();
+export const JobPage = ({ deleteJob }: Props) => {
     const job: Job = useLoaderData() as Job;
+    const navigate = useNavigate();
+    const onDeleteClick = (id: string): void => {
+        const confirm = window.confirm('Are you sure?');
+        if (!confirm) {
+            return;
+        }
+        deleteJob(id);
+        navigate('/jobs');
+    }
 
     return (
         <>
@@ -146,7 +153,7 @@ export const JobPage = () => {
                                 </Link>
 
                                 {/* Delete Job */}
-                                <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
+                                <button onClick={() => onDeleteClick(job.id ?? '')} className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
                                     Delete Job
                                 </button>
 
@@ -173,4 +180,8 @@ interface LoaderProps {
     params: {
         id: number;
     };
+}
+
+interface Props {
+    deleteJob: (id: string) => void;
 }
