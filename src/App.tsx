@@ -17,7 +17,7 @@ const App = () => {
         const res = await fetch('/api/jobs', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(newJob),
         });
@@ -26,6 +26,10 @@ const App = () => {
     }
 
     const deleteJob = async (id: string): Promise<void> => {
+        const res = await fetch(`/api/jobs/${id}`, {
+            method: 'DELETE',
+        });
+        console.log(res);
         return;
     };
 
