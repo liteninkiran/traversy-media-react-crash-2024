@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate, useLoaderData } from 'react-router-dom';
 import { Job } from '../components/JobListing';
-import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-export const EditJobPage = () => {
+export const EditJobPage = ({ updateJobSubmit }: Props) => {
     const job: Job = useLoaderData() as Job;
 
+    const [id, setId] = useState(job.id);
     const [title, setTitle] = useState(job.title);
     const [type, setType] = useState(job.type);
     const [location, setLocation] = useState(job.location);
@@ -15,9 +17,27 @@ export const EditJobPage = () => {
     const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
     const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
 
+    const navigate = useNavigate();
+
     const submitForm = (e: React.SyntheticEvent): void => {
         e.preventDefault();
-
+        const updatedJob: Job = {
+            id: id,
+            title: title,
+            type: type,
+            location: location,
+            description: description,
+            salary: salary,
+            company: {
+                name: companyName,
+                description: companyDescription,
+                contactEmail: contactEmail,
+                contactPhone: contactPhone,
+            },
+        }
+        updateJobSubmit(updatedJob);
+        toast.success('Job updated successfully');
+        return navigate(`/jobs/${id}`);
     }
 
     return (
@@ -213,4 +233,8 @@ export const EditJobPage = () => {
         </section>
 
     );
+}
+
+interface Props {
+    updateJobSubmit: (job: Job) => void;
 }
