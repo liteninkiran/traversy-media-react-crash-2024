@@ -8,8 +8,8 @@
             "location": "Boston, MA",
             "salary": "$70K - $80K",
             "company": {
-                "name": "NewTek Solutions",
-                "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
+                "name": "NewTech Solutions",
+                "description": "NewTech Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
                 "contactEmail": "contact@teksolutions.com",
                 "contactPhone": "555-555-5555"
             }
