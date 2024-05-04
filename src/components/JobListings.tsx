@@ -8,8 +8,7 @@ export const JobListings = ({ isHome = false }: Props) => {
 
     useEffect(() => {
         const fetchJobs = async () => {
-            const baseUrl = 'http://localhost:8001';
-            const url = baseUrl + '/jobs' + (isHome ? '?_limit=3' : '' );
+            const url = '/api/jobs' + (isHome ? '?_limit=3' : '' );
             try {
                 const res = await fetch(url);
                 const data = await res.json();
@@ -21,7 +20,7 @@ export const JobListings = ({ isHome = false }: Props) => {
             }
         }
         fetchJobs();
-    }, []);
+    }, [isHome]);
 
     return (
         <section className="bg-blue-50 px-4 py-10">
